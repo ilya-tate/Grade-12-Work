@@ -1,0 +1,50 @@
+Ternaries
+    - This is just a quick reminder about how ternaries work, think of them as small if statements.
+    - { conditional ? truePath : falsePath }
+
+Spread Operator
+    - The spread operator (...) will iterate through and add all values from an attay-like object.
+    Ex.
+        book = {
+            title: 'Coding',
+            pages: 123,
+            cover: 'hard-cover'
+        }
+        bookV2 = {
+            ...book,
+            pages: 140,
+            author: 'Steve'
+        }
+    - Book Version 2 will have all the same values but we changed pages to 140 and added an author property.
+
+Mapping Arrays
+    - When you have an array with several items that you want to break down the best is .map().
+    - .map() is an array method that will go through each of the items and do a thing.
+    - The nice part of .map() is taht it returns a whole new array when it's finished.
+    - Other methods such as forEach() does not create new arrays and instead just pastes content for the existing array.
+
+Anatomy of .map()
+    - The first part of a map metod is a variable name that will represent each item from your array.
+    Ex.
+        let newArray = people.map(person => {
+    - This variable name should be named as the singualr or the array.
+    Ex.
+        people => person
+        books => book
+    - Next you can destructure your item if you like, this not required but does make the setup easier.
+    Ex.
+        let newArray = people.map(person => {
+            const { name, age, job, shirtColor, drink, pet } = person;
+    - Lastly you need to return the react element from the map.
+    - This return a new HTML for each item in the array.
+    Ex.
+        let newArray = people.map(person => {
+            const { name, age, job, shirtColor, drink, pet } = person;
+            return {...person, shirtColor: 'tie-dye', isNice: 'yes'};
+        });
+
+.forEach()
+    - forEach() doesn't return an array as an output.
+    - You hvae 3 values taht you can use to work with, value, index, and array (the entire thing).
+    - The last export of a forEach() loop is 'undefined'. This really messes with returnign values.
+    - Instead you can have a conditional that acts depending on the values returned. Counting occurences, breaking up the array into smaller arrays, printing out every name that starts with A, etc.
