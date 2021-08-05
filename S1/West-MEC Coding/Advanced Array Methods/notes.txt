@@ -48,3 +48,31 @@ Anatomy of .map()
     - You hvae 3 values taht you can use to work with, value, index, and array (the entire thing).
     - The last export of a forEach() loop is 'undefined'. This really messes with returnign values.
     - Instead you can have a conditional that acts depending on the values returned. Counting occurences, breaking up the array into smaller arrays, printing out every name that starts with A, etc.
+
+.filter()
+     - filter() is how you can remove certain items form your array.
+    - It will go through each item and compare them to a conditional that you set up, true gets added and false does not.
+
+.every()
+    - This checks to make sure that EVERY value meets the condition.
+    Ex.
+        const numbers = [-1, -2, 20, 40, 50];
+        console.log(numbers.every(num => num < 100));
+
+.some()
+    - This is very similar to .every() but instead of checking all, it checks in there are any that are true.
+    - As long as one is true this will return a true statement.
+
+.reduce()
+    - reduce() is a method that adds to an output, it finds the accumulation of numbers.
+    - This does nothing for non-number values, this is very useful for creating updated numbres of items.
+    Ex.
+        const array = [2, 4, 6, 8, 10];
+        array.reduce(total, current, index, arr => {
+            return total + current;
+        }, 20);
+    - Total is a variable that is automatically returned when the method end.
+    - Current is a variable referring to the value currently being looked at.
+    - You can choose how this number will affect the total (here it is added).
+    - Lastly is the optional starting value.
+    - This is outside of the callback function and sets the total value so that you can start at any value.
