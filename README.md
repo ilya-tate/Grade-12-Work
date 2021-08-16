@@ -1,3 +1,2 @@
-# 12th-Grade-Work
-
- Ilya Tate work from Senior year of highschool
+# West-MEC Year 2
+All work from West-MEC Coding year 2
