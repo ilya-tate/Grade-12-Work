@@ -1,0 +1,24 @@
+React
+    - Creating a react app is a large task that we can use toolchains to do for us.
+    - There are a lot of toolchains that server different purposes but here are the bigger ones: Create React App, Next.js, Gatsby, and Parcel.
+
+Create React App
+    - Now that the CRA is installed we can use it to create a new react app.
+    - npx create-react-app "file-name"
+    - This command is run with npx (nod package executable).
+
+Intro to .jsx
+    - JSX stands for javascript expressions and runs perfectly fine in a .js file too.
+    - This language allows us to type HTML style code in a JS format.
+    - The biggest advantage is allowing us to do calcutltaions or conditional checking alongside the page rendering.
+
+Using .jsx
+    - When you are creating components or anything that is rendered with the index.js file you can instead use .jsx.
+    - .jsx should only be used with files that are capitalized.
+    - You can use JS or JSX bit the benefit to JSX is the use of emmet and auto-fill of the HTML elements.
+
+Using Code in JSX`
+    - The way to code in JSX is surrounding it in {}.
+    - This informs the code to treat everything inside of the brackets as regular JS.
+    - If you want anything to render than you need to "return" if from the component function.
+    - Lastly, just like JS, when you return something the code stops.
