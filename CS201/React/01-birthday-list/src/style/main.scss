@@ -1,4 +1,5 @@
-@use './base/';
+@use './base';
 @use './themes/defaultTheme';
-@use './util/';
+@use './util';
 @use './layout/app';
+@use './components/list';

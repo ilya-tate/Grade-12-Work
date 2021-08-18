@@ -1,0 +1,85 @@
+React
+    - Creating a react app is a large task that we can use toolchains to do for us.
+    - There are a lot of toolchains that server different purposes but here are the bigger ones: Create React App, Next.js, Gatsby, and Parcel.
+
+Create React App
+    - Now that the CRA is installed we can use it to create a new react app.
+    - npx create-react-app "file-name"
+    - This command is run with npx (nod package executable).
+
+Intro to .jsx
+    - JSX stands for javascript expressions and runs perfectly fine in a .js file too.
+    - This language allows us to type HTML style code in a JS format.
+    - The biggest advantage is allowing us to do calcutltaions or conditional checking alongside the page rendering.
+
+Using .jsx
+    - When you are creating components or anything that is rendered with the index.js file you can instead use .jsx.
+    - .jsx should only be used with files that are capitalized.
+    - You can use JS or JSX bit the benefit to JSX is the use of emmet and auto-fill of the HTML elements.
+
+Using Code in JSX`
+    - The way to code in JSX is surrounding it in {}.
+    - This informs the code to treat everything inside of the brackets as regular JS.
+    - If you want anything to render than you need to "return" if from the component function.
+    - Lastly, just like JS, when you return something the code stops.
+
+Introduction to Props
+    - Props (short for properties) are any settings or values that is attaches to a component.
+    - These are most used to pass values down the line but cna also be used just like HTML element properties.
+
+Props
+    - You can give these props any name and any value.
+    - The better you name it hte more useful it will be.
+    Ex.
+        <Question
+            key={ data.id }
+            title={ data.title }
+            info={ data.info }
+        />
+        const Question = ({ title, info }) => // Code
+
+Destructuring Props
+    - If you have a lot of information you can destructure your props to save you some space.
+    Ex.
+        <Question
+            key={ data.id }
+            { ...data }
+        />
+        const Question = ({ title, info }) => // Code
+
+Anatomy of .map()
+    - You can destructure your item if you like, this is not required but does make the setup easier.
+
+Mapping Arrays
+    - You can do more complicated return that use HTML components and props to fill out the information.
+
+Using Props
+    - Using props once they are passed down is as simple as adding the name of the prop to the component parameters.
+    - We use { ... } to immediately deconstruct it for use in the component.
+    Ex.
+        const List = ({ people, name, id, info }) => // Code
+    - Now that we have accepted these props we are able to use them as variables.
+    - This is especially important when we are mapping and using the same variable for several different values.
+
+Introduction to Hooks
+    - React is only re-rendered when told to, in react 16.7 and older you had to write these functions by hand.
+    - Since react 16.8 there are built in hooks that you cna use without creating your own functions.
+    - Hooks are just special functions that are built into react that let you 'hook' into the react features.
+    - Every hook in react must start with a lowercase "use".
+
+Use Effect
+    - useEffect() is a function that will run anytime a re-render happens.
+    - This is especially helpful when pulling data from a server and we want to make sure that the data is up to date on render.
+    - useEffect runs a certain chunk of code ever re-render, most often that chunk is a function.
+    - The 'effect' to the right is the js code that runs when you render.
+    - The effect that is created is permanent and will stack over and over.
+    - We can us ea cleanup function that removes any left behind events. This is not required for every effect, only use when needed (usually events).
+    - The input array can be used to choose specific state changes that will cause this effect instead of every render.
+    - You can also leave it empty to have the effect happen only once.
+    Ex.
+        useEffect(() => {
+            // Effect
+            return () => {
+                // Cleanup
+            }
+        }, [/* input */]);

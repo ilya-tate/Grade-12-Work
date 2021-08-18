@@ -1,0 +1,32 @@
+@use '../themes/defaultTheme' as *;
+@use '../util/variables' as *;
+@use '../util/mixins' as *;
+
+.list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.75;
+  margin-bottom: 1.5rem;
+  border-radius: 3rem;
+  position: relative;
+  img {
+    @include box(75px);
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: $light-shadow;
+  }
+  h4 {
+    margin-bottom: 0.35rem;
+    margin-left: 1rem;
+  }
+  p {
+    margin-bottom: 0;
+    margin-left: 1rem;
+  }
+  button {
+    position: absolute;
+    right: 0;
+    bottom: 25%;
+    width: 6.5rem;
+  }
+}
