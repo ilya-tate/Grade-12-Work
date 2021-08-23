@@ -1,0 +1,66 @@
+@use '../themes/defaultTheme' as *;
+@use '../util/variables' as *;
+@use '../util/mixins' as *;
+
+.single-item{
+  background: $clr-white;
+  border-radius: $radius;
+  margin: 2rem 0;
+  box-shadow: $light-shadow;
+  transition: $transition;
+
+  img{
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    border-top-right-radius: $radius;
+    border-top-left-radius: $radius;
+  }
+  &:hover{
+    box-shadow: $dark-shadow;
+  }
+
+  footer{
+    padding: 1.5rem 2rem;
+  }
+  .item-info{
+    @include flex-center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    
+    h4{
+      margin-bottom: 0;
+    }
+  }
+
+  .item-price{
+    color: $clr-primary-4;
+    background: $clr-primary-9;
+    padding: 0.25rem 0.5rem;
+    border-radius: $radius;
+  }
+  .delete-btn {
+    display: block;
+    width: 200px;
+    margin: 1rem auto 0 auto;
+    color: $clr-red-dark;
+    background: transparent;
+    border: 1px solid $clr-red-dark;
+    padding: 0.25rem 0.5rem;
+    border-radius: $radius;
+    transition: $transition;
+    &:hover {
+      color: $clr-white;
+      background: $clr-red-dark;
+    }
+  }
+
+  button {
+    color: $clr-primary-4;
+    padding-left: 0.5rem;
+    font-size: 1.15rem;
+    font-weight: bold;
+    text-transform: capitalize;
+
+  }
+}

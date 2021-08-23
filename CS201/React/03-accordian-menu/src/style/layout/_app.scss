@@ -1,0 +1,14 @@
+@use '../themes/mainTheme' as *;
+@use '../util/variables' as *;
+@use '../util/mixins' as *;
+
+.container {
+    background: $clr-white;
+    height: 50vh;
+    width: 50vw;
+    border-radius: $radius;
+    h3,
+    h4 {
+        text-transform: capitalize;
+    }
+}
