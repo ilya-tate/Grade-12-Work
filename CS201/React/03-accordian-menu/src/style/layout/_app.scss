@@ -4,11 +4,66 @@
 
 .container {
     background: $clr-white;
-    height: 50vh;
-    width: 50vw;
+    width: 90vw;
+    max-width: 920px;
+    padding: 2rem;
     border-radius: $radius;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    
     h3,
     h4 {
         text-transform: capitalize;
+    }
+    
+    h4 {
+        font-weight: bold;
+        margin: .75px;
+    }
+    
+    article {
+        height: 90%;
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        section {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            border: 2px solid $clr-btn-bg;
+            border-radius: $radius;
+            box-shadow: $light-shadow;
+            margin-bottom: 1rem;
+            padding: 0.25rem;
+            flex-direction: column;
+            
+            .question {
+                width: 100%;
+                padding: 0.5rem;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                
+                h3 {
+                    font-weight: bold;
+                    width: 80%;
+                    font-size: 1rem;
+                }
+                
+                button {
+                    height: 2rem;
+                    width: 2rem;
+                    background-color: $clr-btn-bg;
+                    color: $clr-btn-sign;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        @include flex-center-column;
     }
 }

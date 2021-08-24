@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Question from '../pages/Question';
 
 const Questions = ({ data }) => {
-    const [isAnswerVisible, setIsAnswerVisible] = useState(false);
-
-    return (
-        <div className="question-box">
-            <h4>{ data }</h4>
-        </div>
-    );
+  return (
+    <article>
+        { data.map(question => {
+          return (
+            <Question data={ question } />
+          );
+        }) }
+    </article>
+  );
 }
 
 export default Questions;
