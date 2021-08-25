@@ -83,3 +83,77 @@ Use Effect
                 // Cleanup
             }
         }, [/* input */]);
+
+React-Router
+    - React-Router is not an official library that is included in the create-react-app chaintool.
+    - This si something that you will NEED to use for multi-page sites to avoid page reloading.
+    - Technically you are able to re-render the entire site by using states.
+    - Routes let you create an expansive site from databases without needing to do extra programming.
+    - npm i --global react-router-dom
+
+Imports
+    - There are four imports you need to have.
+    - We are going to go over these one at time, write these somewhere easily accessible.
+
+BrowserRouter as <Router>
+    { BrowserRouter as Router } - You don't have to rename that import but it is common practice and you should at least be read to see it from others.
+    <Router> - SUrround your <App /> with the "Router" element on the index level making it usable everywhere in the app.
+    Ex.
+        import { BrowserRouter as Router } from 'react-router-dom';
+        ReactDOM.render(
+            <Router>
+                <App />
+            </Router>,
+            document.getElementById('root');
+        );
+
+<Route path="url">
+    - The "Route" lets us define what the URL path name will say.
+    - In this example we use "/" for the home page "west-mec.org".
+    - "/about" would read "west-mec.org/about".
+    Ex.
+        <Route exact path="/">
+            <Home />
+        </Route>
+        <Route path="/about">
+            <About />
+        </Route>
+
+Exact Path
+    - React will render every link that matches the requested URL on the router.
+    - In order to stop this we use exact before the path stop in form rendering all the time.
+    - Most important for this is home "/" because it matches everything.
+
+Error 404 Page
+    - Routes make it easy to check error 404 pages and design them.
+    - There is a catch all route that you can create an error page for.
+    Ex.
+        <Route path="*">
+            <Error />
+        <Route />
+
+<Switch>
+    - Switch is another component that you can use to allow exclusively render a path.
+    - THis stop the need for exact and makes sure the error pages doesn't always render.
+    - Make sure that you list the page from most to least specific.
+    Ex.
+    	<Switch>
+	    <Route exact path="/">
+	        <Home />
+	    </Route>
+	    <Route path="*">
+	        <Error />
+	    </Route>
+	</Switch
+
+Error Page
+    - Using react router we are able to set up a switch component that will force ONLY the first path to match to render.
+    - This allows us to create a "404 page not found" catch.
+    Ex.
+        <Route path="*">
+
+<Link to="url">
+    - Using routers mean that you can't use <a/> tags.
+    - <a/> tag will force re-renders of your site and will reset your state values in some cases.
+    - Instead we use <Links> and "to" instead of "href".
+
