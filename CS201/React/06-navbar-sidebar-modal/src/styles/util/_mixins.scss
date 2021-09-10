@@ -58,6 +58,18 @@
   flex-direction: column;
 }
 
+@mixin flex-space-bet {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-space-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 //* This is when we use ::after and ::before
 @mixin pseudo(
   $width: 100%,

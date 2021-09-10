@@ -157,3 +157,96 @@ Error Page
     - <a/> tag will force re-renders of your site and will reset your state values in some cases.
     - Instead we use <Links> and "to" instead of "href".
 
+useRef
+    - The hook useRef creates references to other values.
+    - There are two big differences between useRef and useState. useRef does not trigger re-renders. useRef can be used to access DOM elements.
+
+No Re-Render
+    - Variables also don't trigger re-renders but useRef does not lose its value when a re-render happens.
+    - This is useful for small changes like counting clicks or logging errors.
+    - Re-rendering can slow down the site a lot if done too often.
+
+Accessing DOM Elements
+    - DOM elements are things like <div> or <input>.
+    - By using a ref property we are able to easily change things about the element using ref.
+
+useReducer
+    - useReducer is another hook that is available with React that allows you to store a bunch of functions / methods in one or more files.
+    State - This is a state that is declared at the start that holds all your information.
+    Dispatch - This is a word or phrase that is used to tell the reducer what to do.
+
+File Structure
+    - In order to save space / organize your functions, you place everything inside of a separate file called reducer.js that is then imported to the rest of the files.
+    - useReducer is a hook imported from react and used in all of the files that require it.
+
+Importing useReducer
+    - We import useReducer from react.
+    - Import the reducer function from the .js file.
+    - Create a default state.
+    - Then create the useReducer hook in the component function.
+
+Dispatch
+    - The dispatch function in your app will take an object filled with different values and pass them on to the reducer.js.
+    type: - Is the command you want to run.
+    payload: - Is the relevant information that you will need to complete the function.
+    Ex.
+        <button onClick={ () => {
+            dispatch({ type: 'REMOVE_ITEM', payload: person.id });
+        } } />
+
+reducer.js
+    - reducer.js is a file that you use to hold all of the switch cases that run using your reducer.
+    Ex.
+        export const reducer = (state, action) => {
+            if (action.type === 'ADD ITEM') {
+                const newPeople = [...state.people, action.payload];
+                return { ...state, people: newPeople };
+            }
+        }
+    - reducer.js will have many different IFs to handle all the types you use in reducer.
+
+useContext
+    - useContext is a hook that allows us to create global states, functions, and variables.
+    - Context allows us to skip prop drilling and keep all the functional pieces of our code separate behind a single file.
+    - Context is strange compared to other hooks since this is used on the index level.
+    - For the entire program to read and write to this data it needs to be provided to the entire app with a wrapper element.
+
+context.js
+    - The content is storing data in 1 or more separate files.
+    - If there is only 1 file then we should call it context.js.
+    - This file builds the context hook and exports it to the index level.
+
+Importing Context
+    - Import context from react the same as the other hooks.
+    - Creating your context is not useContext, notice the "React.createContext()".
+    Ex.
+        import React, { useContext } from 'react';
+        const AppContext = React.createContext();
+
+AppProvider Function
+    - This App Provider is the function that you use to create and return all of the values that you want available to the entire program.
+    - The parameters for this function are always { children }, meaning everything in the app.
+
+Return AppContext.Provider
+    - You put all the state and stuff in here but the return is the magic.
+    - The value property is hwo you pass the state sand functions onto the rest of the app.
+    Ex.
+        return (
+            <AppContext.Provider value={ { isLoading, error } }
+                { children }
+            </ AppContext.Provider>
+        );
+
+Exporting
+    - Exporting the context requires two different exports.
+    - The newly created react hook. Usually called something related to the context i.e. useGlobalContext or useAppContext.
+    - The AppContext and AppProvider export.
+
+Custom Hooks
+    - You can create your own hoods (functions that use states) by creating them in a different file and exporting them.
+
+useFetch
+    - There are a few uses for this but consider making these for anything that you can and will use it over and over or in multiple programs.
+    - useFetch is an extremely common functions since we are commonly using API fetch requests.
+
+

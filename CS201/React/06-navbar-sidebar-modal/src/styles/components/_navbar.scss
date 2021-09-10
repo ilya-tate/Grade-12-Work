@@ -2,92 +2,129 @@
 @use '../util/variables' as *;
 @use '../util/mixins' as *;
 
-.nav-center {
-  .nav-header {
-    @include flex-center;
-    justify-content: space-between;
-    padding: 1rem;
-  }
+.navbar {
+  background: $clr-white;
+  box-shadow: $light-shadow;
 
-  .nav-toggle {
-    font-size: 1.5rem;
-    color: $clr-primary-4;
-    background: transparent;
-    border-color: transparent;
-    transition: $transition;
-    cursor: pointer;
-    &:hover {
-      transform: rotate(90deg);
+  .nav-center {
+    .nav-header {
+      @include flex-space-bet;
+      padding: 1rem;
     }
-  }
 
-  .logo {
-    height: 40px;
-  }
-
-  .links li {
-    color: $clr-grey-2;
-    font-size: 1rem;
-    text-transform: capitalize;
-    letter-spacing: $spacing;
-    display: block;
-    padding: 0.5rem 1rem;
-    transition: $transition;
-    &:hover {
-      background: $clr-primary-8;
+    .nav-toggle {
+      font-size: 1.5rem;
       color: $clr-primary-4;
-      padding-left: 1.5rem;
+      background: transparent;
+      border-color: transparent;
+      transition: $transition;
+      cursor: pointer;
+      &:hover {
+        transform: rotate(90deg);
+      }
     }
-  }
 
-  // .links-container {}
+    .logo {
+      height: 30px;
+    }
 
-  .social-icons {
-    display: none;
+    .links-container {
+      height: 0;
+      overflow: hidden;
+      &.show {
+        height: auto;
+      }
+    }
+
+    .links li {
+      color: $clr-grey-2;
+      font-size: 1rem;
+      text-transform: capitalize;
+      letter-spacing: $spacing;
+      display: block;
+      padding: 0.5rem 1rem;
+      transition: $transition;
+      position: relative;
+      &:hover {
+        background: $clr-primary-8;
+        color: $clr-primary-4;
+        padding-left: 1.5rem;
+        &::after {
+          width: 100%;
+        }
+      }
+      &::after {
+        @include pseudo;
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 3px;
+        background: $clr-primary-4;
+        transition: $transition;
+      }
+    }
+
+    .social-icons {
+      display: flex;
+      height: 0;
+      overflow: hidden;
+      justify-content: space-around;
+      &.show {
+        height: auto;
+      }
+      li {
+        margin: 0.5rem 1rem;
+      }
+    }
   }
 }
 
 @include tablet {
-  .nav-center {
-    max-width: 1200px;
-    @include center-auto;
-    @include flex-center;
-    justify-content: space-between;
-    padding: 1rem;
-  }
+  .navbar {
+    .nav-center {
+      max-width: 1200px;
+      @include center-auto;
+      @include flex-space-bet;
+      padding: 1rem;
 
-  .nav-header {
-    padding: 0;
-  }
-
-  .nav-toggle {
-    display: none;
-  }
-
-  .links-container {
-    height: auto;
-  }
-
-  .links {
-    display: flex;
-    li {
-      padding: 0;
-      margin: 0 0.5rem;
-      &:hover {
-        padding: 0;
-        background: transparent;
+      .logo {
+        height: 40px;
       }
-    }
-  }
 
-  .social-icons {
-    display: flex;
-    a {
-      margin: 0 0.5rem;
-      color: $clr-primary-4;
-      transition: $transition;
-      &:hover {
-        color: $clr-primary-7;
+      .nav-header {
+        padding: 0;
+      }
+
+      .nav-toggle {
+        display: none;
+      }
+
+      .links-container {
+        height: auto;
+      }
+
+      .links {
+        display: flex;
+        li {
+          padding: 0;
+          margin: 0 0.5rem;
+          &:hover {
+            padding: 0;
+            background: transparent;
+          }
+        }
+      }
+
+      .social-icons {
+        @include flex-space-bet;
+        a {
+          margin: 0 0.5rem;
+          color: $clr-primary-4;
+          transition: $transition;
+          &:hover {
+            color: $clr-primary-7;
+          }
+        }
       }
     }
   }

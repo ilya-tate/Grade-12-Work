@@ -1,27 +1,38 @@
 import React from "react";
 import { FaFacebook, FaLinkedin, FaTwitter, FaBehance } from "react-icons/fa";
+import { Home, Error, About, Cart, Products } from "../Pages";
 
 export const links = [
   {
     id: 1,
     url: '/',
-    text: 'home'
+    text: 'home',
+    page: <Home /> 
   },
   {
     id: 2,
-    url: '/about',
-    text: 'About'
+    url: '*',
+    text: 'Error',
+    page: <Error />
   },
   {
     id: 3,
-    url: '/products',
-    text: 'Products'
+    url: '/about',
+    text: 'About',
+    page: <About /> 
   },
   {
     id: 4,
     url: '/cart',
-    text: 'Cart'
-  }
+    text: 'Cart',
+    page: <Cart /> 
+  },
+  {
+    id: 5,
+    url: '/products',
+    text: 'Products',
+    page: <Products /> 
+  },
 ];
 
 export const socials = [

@@ -1,9 +1,3 @@
 @use '../themes/defaultTheme' as *;
 @use '../util/variables' as *;
 @use '../util/mixins' as *;
-
-nav {
-    background: $clr-white;
-    box-shadow: $light-shadow;
-    height: 15rem;
-}
