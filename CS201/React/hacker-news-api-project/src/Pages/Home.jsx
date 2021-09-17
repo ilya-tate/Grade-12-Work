@@ -1,9 +1,15 @@
 import React from 'react';
+import { Components } from '../Components';
 
-export const Home = () => {
+const Home = () => {
   return (
-    <div>
-      Really cool stuff is gonna go here and be super epic like I am
+    <div className="Home">
+
+      <Components.SearchBar />
+      <Components.Story />    
+
     </div>
   );
 }
+
+export default Home;
