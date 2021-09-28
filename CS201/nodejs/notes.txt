@@ -1,0 +1,90 @@
+What is Node.js
+    - Node is an environment that allows us to run JS outside of the browser.
+    - Built using chrome's V8 JS engine.
+    - Node has a large and great community that is adding to the libraries available.
+
+Differences from Browser to Node
+    - There is no DOM (dom calls error out).
+    - There is no Window.
+    - This runs server side apps.
+    - Great for filesystem (accessing the computer not just the browser).
+    - Versioning (the version is static so there is no chance of breaking with future updates).
+    - They use commonJS so we don't need to worry about ES6 or browser compatibility.
+
+Installing NodeJS
+- If you are going to install this on your own computer you should always use the LTS (long term support) version.
+
+REPL and CLI
+    - REPL(Read Eval Print Loop) is a terminal command that lets us use Node.
+    - CLI (Command Line Interface) is the better way that we can use Node.
+
+REPL
+    - REPL is kind of like having a small IDE in your terminal you can create variables and call them in the terminal but this is very inefficient and just for playing around.
+
+CLI
+    - This is the version that runs js files and compiles them for the terminal.
+    - If you type 'node filename.js' the file will be compiled and run without the need for a browser engine.
+
+Globals
+    - Just like JS, there are several global variables that we are able to use anywhere.
+    - For instance 'console' we dont need to define this, node already knows.
+    - Here are a few globals that you should know.
+    __dirname (with 2 _'s) - Path to current directory.
+    __filename (with 2 _'s) - The current file name.
+    require - Allows us to use modules.
+    module - Info about the current module.
+    process - Info about the env where the program is being executed.
+
+Built-In Modules
+    - There are a lot of built in modules that are useful for different programs.
+    - We are going to be using four main ones, but you can find more in the docs if you want to make your own projects.
+
+OS Module
+    - The OS module is used to return information on the computer and system information on hte PC.
+    Ex.
+        const os = require("os");
+
+Path Module
+    - The Path module is used for navigating the directories and file paths.
+    - This also includes methods that will clean up paths to avoid errors.
+    Ex.
+        const path = require("path");
+
+FS (File System) Module
+    - The file system module is extensive and allows interation between your code and the files on your computer.
+    - This has methods to allow reading, writing, cleaning, and combining files (and so much more).
+    - Because it is so extensive we only import what we need.
+    Ex.
+        const { readFileSync, writeFileSync} = require("fs");
+
+HTTP Module
+    - HTTP is all about servers and internet protocol.
+    - This library truncate a lot of difficult code into simpler methods and never buffers requests or responses, allowing users to stream data.
+    Ex.
+        const http = require("http");
+
+Nodemon
+    - Nodemon is a dev dependency that we use to help with node server development.
+    - If you ever update any files on a server then you need to stop and restart the server to load those settings.
+    - Nodemon lets us do it automatically.
+
+NPM Scripts
+    - If you look into your package.json you will also see a "scripts" object.
+    - We have been using this in react without even knowing it you may recognize the commands listed.
+
+Testing Script
+    - Please test your script now, using npm to run the script.
+    - Make sure it starts up the nodemon server and continues to run.
+    - If a script fails to run it is smart to check "npm run" as well, some CLI commands requires the run keyword.
+
+Event Loop
+    - The event loop is a key part of how the browser works with async functions and callbacks.
+
+Async
+    - As we saw there ar esome functions that run outside of the call stack in a browser API.
+    - Any code that is running / operating outside of the call stack is called asynchronous.
+    - We can force functions to be async, allowing our code to keep running without waiting for the function to finish.
+
+Node Event Loop
+    - Node recreated this event loop process for their own library.
+    - This allows node to handle several requests at the same tiem without running into delays or blockages.

@@ -1,5 +1,5 @@
-const log = text => {
+const logFunc = text => {
   console.log(text);
 }
 
-module.exports = log;
+module.exports = logFunc;
