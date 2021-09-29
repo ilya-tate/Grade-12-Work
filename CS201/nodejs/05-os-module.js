@@ -9,7 +9,7 @@ const currentOS = {
   name: type(),
   release: release(),
   totalMem: totalmem(),
-  freemMeme: freemem()
+  freeMem: freemem()
 };
 
 console.log(currentOS);

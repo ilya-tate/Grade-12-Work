@@ -87,4 +87,60 @@ Async
 
 Node Event Loop
     - Node recreated this event loop process for their own library.
-    - This allows node to handle several requests at the same tiem without running into delays or blockages.
+    - This allows node to handle several requests at the same time without running into delays or blockages.
+
+Hypertext Transfer Protocol
+    - HTTP is how we send information from a browser or a URL to a server.
+    - HTTP is the typical way that users ask for information from a server and that is called a request.
+
+http Module
+    - Node is excellent at server setup and request handling, this is done through the http module.
+    - Here we have methods like http.createServer() that allow us to easily create a new server.
+
+createServer()
+    - "http.createServer()" takes in a call back function with 2 parameters, one for requests, and one for a response.
+    Ex.
+        const server = http.createServer((req, res) => {
+            // Code
+        });
+
+Req and Res
+    - Req is an object representing the http request, typically done through the url but also through things like fetch().
+    - Res is the response, or what the server returns to the user to use.
+    Ex.
+        const server = http.createServer((req, res) => {
+            // Code
+        });
+
+The Request Object
+    - There is a lot of information stored in the request object, including url, header, and params.
+    - We are going to start with the url to get the location of the page we are querying.
+    Ex.
+        if (req.url === "/") return;
+    - The response object has a ton of information as well, including format, json, and download.
+    - We are going to focus on the required one called ".end" that ends the response process.
+    Ex.
+        res.end("Welcome to our home page");
+        else { res.status(404).end(); }
+
+Promises
+    - Promises are a special object that holds information about the values received but also whether or not the operation is finished.
+    - Promises are asynchronous so we can use them to run code and then we can force the code to wait on the promise.
+    - Async / Await is a way that we can use promises.
+    - "await" is a keyword telling us that we are going to await for the promise to finish and return information.
+    - Not everything has a promise on it, fetch is a promise by default but things like large math problems are not promises.
+    - Promises are objects so we can set them up like any other object.
+    Ex.
+        const getText = path => {
+            return new Promise((resolve, reject) => /* Code */);
+        }
+    - Promises have always been very important for js and other async languages.
+    - We are going to see 3 ways to handle promises but please only use async / await in the future.
+
+Events
+    - Events are triggered by use input, just like js or html events like onClick().
+    - Node uses events very often building modules that handle changes on the page.
+    - In node events are built off of a singular module called the event emitter.
+    - This module takes in some kind of request and gives back something depending on the parameters.
+    - The common events are requests and we use a method called ".on()" for that.
+    - Any other module that extends events is also able to use the ".on()" for example the http servers.

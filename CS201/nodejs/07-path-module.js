@@ -1,4 +1,4 @@
-const path = requre("path");
+const path = require("path");
 
 console.log(path.sep);
 
