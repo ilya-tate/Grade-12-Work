@@ -48,11 +48,28 @@ http
         break;
 
       case "/ash":
-        res.end("<pre>Test</pre>");
+        res.end(
+          "<pre> The answer is upside down<br><br>" +
+            "9999999999<br>" +
+            "9966666699<br>" +
+            "9966666699<br>" +
+            "9966999999<br>" +
+            "9966999999<br>" +
+            "9966666699<br>" +
+            "9966999999<br>" +
+            "9966999999<br>" +
+            "9966666999<br>" +
+            "9966666999<br>" +
+            "9999999999</pre>"
+        );
+        break;
+
+      case "/6":
+        res.end("<pre>Congratulations, you have reached the end!</pre>");
         break;
 
       default:
-        res.end("<pre>Wrong Answer!</pre>");
+        res.end("<pre>Wrong Answer!<br>Now go back...</pre>");
         break;
     }
   })
