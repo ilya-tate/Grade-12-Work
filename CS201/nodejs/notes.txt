@@ -144,3 +144,20 @@ Events
     - This module takes in some kind of request and gives back something depending on the parameters.
     - The common events are requests and we use a method called ".on()" for that.
     - Any other module that extends events is also able to use the ".on()" for example the http servers.
+
+File System Flags
+    - When creating files sequentially we need to tell node how we want the data exported, i.e. overwrite, append, create only if it doesn't exist etc.
+    - Here are some common ones.
+    w - Open file for writing (overwrites the file).
+    a - Open file for appending (adds to the file).
+    r - Open file for reading (you can't change the file when you use this flag).
+
+Streams
+    - You have likely heard of streaming tc, movies, and music on your phone.
+    - Streaming is a technical term that means to do something sequentially.
+    - We only load 64 kb of information at a time so we can enjoy the loaded part while the rest is loading.
+
+Streaming Options
+    - Just like fs options with flags, there are options with streaming as well the big two ones are.
+    highWaterMark - Tells the stream how many bytes should be in each chunk.
+    encoding - Defines the language, "utf8" for example.
