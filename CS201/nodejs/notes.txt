@@ -208,3 +208,31 @@ Server Status Codes
 MIME Types
     - Mime types tell the browser how to encode the information that it is responding with.
     - Some well known ones are text, JSON, css, html. Look them up in MDN for more.
+
+API vs SSR
+    - There are two main things that you can do with a server.
+    - You can set up an API with json data or you can set up a website using server side rendering.
+
+API
+    - APIs are used to return to the client in a response using the res.json().
+    - This is used to send data and store data.
+
+SSR
+    - This is also easily served using res.render().
+    - This is used to serve templates of the page from the server.
+
+Express JSON
+    - When serving a JSON file you need to encode the text to be application/json.
+    - Express responses have a method for this too, res.json().
+
+req.params
+    - Url routes can include a:to represent a unique param and we can use that from the req object.
+    Ex.
+        test/users/:id => test/users/1234
+    - If we check req.params we receive "{ id: 1234 }".
+
+res.query
+    - For more complicated searches you can use query, you can add any or all query params to this.
+    Ex.
+        test/api/query => test/api/query?id=123
+    - req.query returns an object with property id "{ id: 123 }".
