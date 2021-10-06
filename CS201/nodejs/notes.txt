@@ -161,3 +161,50 @@ Streaming Options
     - Just like fs options with flags, there are options with streaming as well the big two ones are.
     highWaterMark - Tells the stream how many bytes should be in each chunk.
     encoding - Defines the language, "utf8" for example.
+
+Servers
+    - Servers are computers, I know they sound more advanced and technical, but they are a computer just like your laptop.
+    - The only difference is that a server is meant to stay on always and have the resources they are carrying available.
+
+HTTP Request Cycle
+    - Urls are an address to the server where the information is stored.
+    - Think of it like a house and you need to send a letter to ask for something, you can't do that without knowing the address.
+    - The url holds a lot of information, where to go and what to ask for.
+    - The server waits for this HTTP request and then HTTP responds with the corresponding data if available.
+
+Request Messages
+    - A request has four parts.
+    Method - GET, PUT, POST, DELETE
+    Url - The address to go to.
+    Headers - The options that your request carries.
+    Body - Any other relevant information needed.
+    - CRUD
+    Get - Read data
+    Post - Create data
+    Put - Update data
+    Delete - Delete data
+
+Headers (optional)
+    - A header is an object the is filled with key value pairs describing the request.
+
+Body or Payload (optional)
+    - This is the content that you are depositing onto the server if you are running a PUT or POST request.
+    - This is totally optional and the user can't do this with a url request, you would need to set up this command using a form or something.
+
+Response Messages
+    - This is very similar to the request message.
+    Status Code - 200, 404, etc. tells the user the status.
+    Status Text - Describes the code, OK or Page not found.
+    Headers - Details about the data and server.
+    Body - The content they want, HTML, JSON, etc.
+
+Server Status Codes
+    100's Information - This is a preliminary response, typically used to let the client know that their request was received and to wait.
+    200's Success - This is a success, there are a lot of codes in the 200, but all of them are just different types of successes.
+    300's Redirect - These are redirection, this is typically placed by the dev to handle deprecations. For Example 301 is moved permanently and the dev displays the new URL.
+    400's Client Errors - This is used when the error seems to be caused by the client and not the server.
+    500's Server Errors - These are reserved for when something goes wrong in the server's code, infinite loops, missing methods, etc.
+
+MIME Types
+    - Mime types tell the browser how to encode the information that it is responding with.
+    - Some well known ones are text, JSON, css, html. Look them up in MDN for more.
