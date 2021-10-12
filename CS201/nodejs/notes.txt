@@ -236,3 +236,32 @@ res.query
     Ex.
         test/api/query => test/api/query?id=123
     - req.query returns an object with property id "{ id: 123 }".
+
+Middleware
+    - Middleware is a function or method that runs between the request and the response.
+    - Express is a middleware for node and most things in express are middleware as well.
+    - The basic layout for middleware is request, middleware, response.
+    - Most middleware is done with functions / methods.
+    - We are going to create our own middleware but there is a key component.
+    - When you work with middleware you must pass it on to the next middleware manually or exit / terminate the code.
+
+Terminating vs. Passing
+    - Terminating the response is an easy ending the response, res.send(), res.json(), etc.
+    - Passing uses a built-in method called next().
+
+app.use()
+    - app.use() is a method that loads an entire directory of files without needing to define each one.
+    - If we run app.use() with a middleware though, express will invoke the middleware on every route in the app.
+
+PUT Method
+    - Put is used to update existing values.
+    - Put methods require two parameters, what you want to change and what it will be changed to.
+
+DELETE Method
+    - Delete removes a value from your data.
+    - All we need is a param to let us know which object we want to remove from teh database.
+
+Postman
+    - Postman is a program that you can install onto your computer to run api requests to check how the server is running.
+    - This saves a lot of time during development and allows you to check the API without creating an async / await to test out the server.
+    - We will create a small req to test Postman, remember that everything needs to be in double quotes.
