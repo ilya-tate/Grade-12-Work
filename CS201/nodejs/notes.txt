@@ -265,3 +265,60 @@ Postman
     - Postman is a program that you can install onto your computer to run api requests to check how the server is running.
     - This saves a lot of time during development and allows you to check the API without creating an async / await to test out the server.
     - We will create a small req to test Postman, remember that everything needs to be in double quotes.
+
+Express Router
+    - Express router is used to reduce the amount of routes that you need to type into your main server file.
+    - You instead create your routes with your multiple methods in one file and then app.use that router file.
+
+express.Router()
+    - Instead of creating an app we create a router in the same way allowing us to create the pathing in a different file.
+    Ex.
+        const router = express.Router();
+
+router.method()
+    - When using routers you create them just like the app using the .methods(path, CB).
+    Ex.
+        router.get("/", (req, res) => /* Code */);
+
+Using a Router
+    - Once you have created your routes you need to export it from the router and import it to the server file.
+    - Then you app.use the route with the path.
+    Ex.
+        app.use("/api/people", people);
+
+Controllers
+    - Controllers ar created to deal with the functions and are then past other router.
+    - This is the final step in creating clean, easy to navigate code for a server.
+    - Since the controller will handle the req, res callback we can now nicely arrange our routes into easy to read methods.
+
+MongoDB
+    - Mong is a non-relational database. There are pros and cons to all the different types of databases but the biggest is the use of json.
+    - Instead of tables we have collections which are big datasets.
+    - Instead of rows we have documents which are accessed using key value pairs like json.
+
+Hosting
+    - MongoDB can be hosted from a local machine if you want but there is a free alternative called "Atlas".
+    - Atlas was created by the same team that created mongoDB.
+
+Allowing Users
+    - Once the database is up and running then you need to whitelist users.
+    - On the left you will see a tab called "Database Access", click it and then add a new user database.
+    - This is just for you right now, if anyone else accesses this db they will do it using your credentials.
+    - Please add your name and generate a secure password and press add user.
+
+Network Access
+    - On the left you wil see "Network Access".
+    - You can choose to add only your ip address but we are going to allow access from anywhere and press confirm.
+
+Creating Your First Database
+    - One the left click "Databases" and then click on the "Collections" tab.
+    - Then click on "Create own data", name the database "Store" and the collection "products".
+
+Mongoose
+    - Mongoose is an alternative to the mongoDB api and is used more often for its convenience.
+    - Mongoose has a built in object modeling api that ensures that all posted documents are exactly the same.
+
+dotenv
+    - Another library, this one loads the .env file that we create.
+    - You want to require the dotenv early on in order to give your hidden codes to the entire program.
+    - Use .config() to initialize them right away.
