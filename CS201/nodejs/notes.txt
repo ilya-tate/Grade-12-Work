@@ -322,3 +322,77 @@ dotenv
     - Another library, this one loads the .env file that we create.
     - You want to require the dotenv early on in order to give your hidden codes to the entire program.
     - Use .config() to initialize them right away.
+
+Schema
+    - Schema is a built in method using mongoose that we build to make sure every document is exactly the same.
+    - To define a schema we need to predefine the name and the data type.
+    - This should all be done in a models folder.
+    new mongoose.schema({}); - This defines a schema object that declares the document variables.
+    mongoose.model(var, schema); - Assigns the schema to a variable that we can use in the server.
+    - By defining a schema we are essentially filtering our results into a common form.
+    - If there is extra information given in the body we won't post it and it gives up data verification from the start.
+
+Important Options
+    - Schema lets us define optional parameters for our data here are some of the best.
+    Type - lets you define the data type.
+    Required - Marks that data as required.
+    Trim - Removes whitespace.
+    Default - If the value is not included in the post it will be added with this default value.
+
+Mongoose Query Language
+    - Mongoose has a built-in query language that allows you to search a collection more efficiently.
+
+Model.find()
+    - Find is similar to filter in js and will return all of the code that matches the query.
+    Ex.
+        Model.find({ completed: true }) // Returns all documents that are complete
+
+Regex
+    - Regex is a special shorthand to allow devs to search through strings.
+    - It was developed to quickly define search patterns.
+
+Creating a Regular Expression
+    - Anything inside of double forward slash is a regular expression.
+    Ex.
+        const re = /testing/;
+    - ABove is a regex that will match the string "testing".
+
+Using a Regular Expression
+    - Once you have created a regex there are a few methods that you can use for testing.
+    str.replace(regex, "replacer"); - Returns a new string with a the replaced value.
+    str.match(regex); - Returns an array of the first match that is found in the string.
+    regex.test(string); - Returns true or false if the regex is found in the string.
+    regex.exec(string); - Returns an array with a bunch of useful information, stops after the first match but can be looped to check the rest.
+
+Single vs. Global
+    - All of the following methods will only work on the first instance that matches in the string.
+    - We can manually extend this to cover every math by adding "g" to the end of the regex.
+
+Character Sets
+    - Anything inside of square brackets "[]" is called a character set, these match anything inside of them and they can have dashes "-" for a range of characters.
+    /[a-zA-Z]/ - Matches all letters capital and lowercase.
+
+Qualifiers
+    - There are extras that you can add to any character or character set to modify the search.
+    ^ - Added before a character set means not.
+    * - Added after a character set means 0 or more.
+    + - Added after a character set means 1 or more.
+    | - Acts like an or between values, required when needing to check multiple characters.
+    ? - Makes any character before it optional.
+    {minNum, maxNum} - Added will add a quantity.
+
+Character Classes
+    - Char classes look for a type of character.
+    \w or \W (not) - This is a word or any ascii character, number, and underscores, "/[a-zA-Z0-9_/".
+    \d or \D (not) - This is any digit, "/[0-9/";
+    \s or \S (not) - Matches any white space: space, tab, break.
+    . - Matches everything except breaks.
+
+Capture Groups
+    - This is a built in tool to grab certain values and return them.
+    - Anything place in parenthesis will be returned using .exec().
+
+Boundaries
+    ^ (start of string) - Signifies the start of the string.
+    $ (end of string) - Signifies the end of the string.
+    \b - Word boundary place in the front to state the start of a word and at the end to state the end of a word.
