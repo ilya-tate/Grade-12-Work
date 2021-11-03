@@ -11,10 +11,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app
+  .use(express.static("./public"))
   .use([express.urlencoded({ extended: false }), express.json()])
-  .get("/", (req, res) => res.send("05-JWT-Basics"))
   .use("/api/v1/", Router)
-  // Middleware
+  // Errors
   .use(errorHandler)
   .use(notFound);
 
