@@ -28,9 +28,9 @@ const login = (req, res) => {
 const dashboard = (req, res) => {
   res.json({
     status: 200,
-    msg: "Success",
+    msg: req.user.username,
     results: [],
-    secret: "Secret number here"
+    secret: req.headers.authorization
   });
 };
 
