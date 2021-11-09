@@ -9,10 +9,14 @@ const { errorHandler, notFound } = require("./middleware");
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Routes
-app.use("/api/v1/auth", routeAuth).use("/api/v1/jobs", routeJobs);
-// Middleware
-app.use(errorHandler).use(notFound);
+app
+  .use([express.urlencoded({ extended: false }), express.json()])
+  // Routes
+  .use("/api/v1/auth", routeAuth)
+  .use("/api/v1/jobs", routeJobs)
+  // Middleware
+  .use(errorHandler)
+  .use(notFound);
 
 const startApp = async () => {
   try {
