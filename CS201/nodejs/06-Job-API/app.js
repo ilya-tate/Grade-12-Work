@@ -3,6 +3,7 @@ require("express-async-errors");
 
 require("dotenv").config();
 const connectDb = require("./db/connect");
+const { auth } = require("./middleware");
 const { auth: routeAuth, jobs: routeJobs } = require("./routes");
 const { errorHandler, notFound } = require("./middleware");
 
@@ -13,7 +14,7 @@ app
   .use([express.urlencoded({ extended: false }), express.json()])
   // Routes
   .use("/api/v1/auth", routeAuth)
-  .use("/api/v1/jobs", routeJobs)
+  .use("/api/v1/jobs", auth, routeJobs)
   // Middleware
   .use(errorHandler)
   .use(notFound);

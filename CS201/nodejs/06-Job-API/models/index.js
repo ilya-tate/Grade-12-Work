@@ -1,7 +1,7 @@
-const job = require("job");
-const user = require("user");
+const Job = require("job");
+const User = require("user");
 
 module.exports = {
-  job,
-  user
+  Job,
+  User
 };
