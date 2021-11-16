@@ -33,15 +33,47 @@ module.exports = {
     res.status(StatusCodes.CREATED).json({ job });
   },
 
-  updateJob = (req, res) => {
-    res.send("updateJob");
+  updateJob = async (req, res) => {
+    const { company, position } = req.body;
+    const { userID } = req.user;
+    const { id: jobID } = req.params;
+
+    if (!company || !position) {
+      throw new BadRequest("Company and position fields are required");
+    }
+
+    const job = await Job.findByIdAndUpdate(
+      { id: jobID, createdBy: userID },
+      req.body,
+      // Job saves new document, not old one
+      // Run validators
+      { new: true, runValidators: true }
+    );
+    if (!job) {
+      throw new NotFoundError(`No job with id ${jobID}`)
+    }
+
+    res.status(StatusCodes.OK).json({ job });
   },
 
   createJob = (req, res) => {
     res.send("createJob");
   },
 
-  deleteJob = (req, res) => {
-    res.send("deleteJob");
+  deleteJob = async (req, res) => {
+    const {
+      user: { userID },
+      params: { id: jobID }
+    } = params;
+
+    const job = await Job.findByIdAndUpdate({
+      _id: jobID,
+      createdBy: userID
+    });
+    if (!job) {
+      throw NotFoundError(`No Job with id ${jobID}`);
+    }
+
+    res.status(StatusCode.OK).json({ job });
   }
 };
