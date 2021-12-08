@@ -21,10 +21,10 @@
     "etag": "^1.8.1",
     "express": "^4.17.1",
     "finalhandler": "^1.1.2",
-    "forwarded": "^0.2.0",
     "fresh": "^0.5.2",
     "http-errors": "^1.7.2",
     "iconv-lite": "^0.4.24",
+    "forwarded": "^0.2.0",
     "inherits": "^2.0.3",
     "ipaddr.js": "^1.9.1",
     "media-typer": "^0.3.0",
@@ -50,21 +50,22 @@
     "statuses": "^1.5.0",
     "toidentifier": "^1.0.0",
     "type-is": "^1.6.18",
-    "unpipe": "^1.0.0",
     "utils-merge": "^1.0.1",
+    "unpipe": "^1.0.0",
     "vary": "^1.1.2"
   },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ilya-tate/CS202-Capstone.git"
+    "url": "git+https://github.com/ilya-tate/CS201-Capstone.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ilya-tate/CS202-Capstone/issues"
+    "url": "https://github.com/ilya-tate/CS201-Capstone/issues"
   },
-  "homepage": "https://github.com/ilya-tate/CS202-Capstone#readme"
+  "homepage": "https://github.com/ilya-tate/CS201-Capstone#readme"
 }
